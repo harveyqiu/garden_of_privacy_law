@@ -14,7 +14,7 @@ export const LegalDocument = defineDocumentType(() => ({
       type: 'string',
       resolve: (doc: DocumentTypes['LegalDocument']) => {
         const [jurisdiction, topic] = doc._raw.flattenedPath.split('.')
-        return `/${jurisdiction}/${topic}`
+        return `/jurisdiction/${jurisdiction}/${topic}`
       },
     },
     jurisdiction: {

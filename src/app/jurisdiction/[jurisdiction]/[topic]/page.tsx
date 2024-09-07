@@ -1,6 +1,7 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { allLegalDocuments } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 
 export default function LegalDocumentPage({ params }) {
   const doc = allLegalDocuments.find(
@@ -13,6 +14,12 @@ export default function LegalDocumentPage({ params }) {
 
   return (
     <article className="mx-auto max-w-2xl py-16">
+        <h1 className='mb-4 text-3xl font-bold'>
+            <Link href={`/jurisdiction/${doc.jurisdiction}`}>
+                {doc.jurisdiction}
+            </Link>
+            <span className='text-gray-500'> / {doc.topic}</span>
+        </h1>
       <h1 className="mb-4 text-3xl font-bold">{doc.title}</h1>
       {/* <div>{doc.body.html}</div> */}
       <MDXContent />

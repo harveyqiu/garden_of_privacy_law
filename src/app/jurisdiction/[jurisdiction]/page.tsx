@@ -21,6 +21,6 @@ export default function JurisdictionPage({ params }) {
 }
 
 export async function generateStaticParams() {
-  const jurisdictions = [...new Set(allLegalDocuments.map((doc) => doc.jurisdiction))]
+  const jurisdictions = Array.from(new Set(allLegalDocuments.map((doc) => doc.jurisdiction)))
   return jurisdictions.map((jurisdiction) => ({ jurisdiction }))
 }
