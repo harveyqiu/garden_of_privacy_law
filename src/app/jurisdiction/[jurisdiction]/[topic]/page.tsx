@@ -37,7 +37,6 @@ const components = {
   ol: createComponentWithId((props: any) => <ol className="list-decimal ml-6 mb-4" {...props} />),
   li: createComponentWithId((props: any) => <li className="mb-2" {...props} />),
   a: createComponentWithId((props: any) => {
-    // console.log(props)
     if (props.children && props.children.startsWith('^')) {
       return (
         <>
