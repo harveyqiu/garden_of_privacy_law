@@ -7,7 +7,9 @@ export default function HomePage() {
 
   return (
     <div>
-      <h1>Data Protection Overview</h1>
+      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+      <h2 className="text-2xl font-bold">Compare</h2>
+      <Link href="/compare/notification" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Compare</Link>
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <h2 className="text-2xl font-bold">Topics</h2>
       <ul>
