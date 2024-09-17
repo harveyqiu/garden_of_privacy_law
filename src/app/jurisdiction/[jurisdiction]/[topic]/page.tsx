@@ -58,6 +58,18 @@ const components = {
     }
     return <a className="text-blue-500 hover:text-blue-600" {...props} />
   }),
+  pre: createComponentWithId((props: any) => {
+    if (props.children?.props?.className === 'language-markdown') {
+      return <ToggleableMarkdown>{props.children.props.children}</ToggleableMarkdown>
+    }
+    return <pre {...props} />
+  }),
+  code: createComponentWithId((props: any) => {
+    if (props.className === 'language-markdown') {
+      return <ToggleableMarkdown>{props.children}</ToggleableMarkdown>
+    }
+    return <code {...props} />
+  }),
 }
 
 export default function LegalDocumentPage({ params }: { params: Params }) {
