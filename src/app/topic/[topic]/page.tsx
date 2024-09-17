@@ -6,13 +6,11 @@ export default function TopicPage({ params }) {
 
   return (
     <div>
-      <h1>{params.topic}</h1>
+      <h1 className='font-medium'>{params.topic}</h1>
       <ul>
         {documents.map((doc) => (
-          <li key={doc._id}>
-            <Link href={doc.url}>
-              {doc.jurisdiction}
-            </Link>
+          <li key={doc._id} className="my-4">
+            <Link href={doc.url} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{doc.jurisdiction}</Link>
           </li>
         ))}
       </ul>
