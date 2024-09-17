@@ -5,15 +5,20 @@ export default function TopicPage({ params }) {
   const documents = allLegalDocuments.filter((doc) => doc.topic === params.topic)
 
   return (
-    <div>
-      <h1 className='font-medium'>{params.topic}</h1>
-      <ul>
+    <div className="container mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6">{params.topic}</h1>
+      
+      <div className="space-y-6">
         {documents.map((doc) => (
-          <li key={doc._id} className="my-4">
-            <Link href={doc.url} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{doc.jurisdiction}</Link>
-          </li>
+          <div key={doc._id} className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-xl font-semibold mb-2">{doc.jurisdiction}</h2>
+            <p className="text-gray-600">{doc.title}</p>
+            <Link href={doc.url} className="mt-4 inline-block text-blue-600 hover:underline">
+              了解更多
+            </Link>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }

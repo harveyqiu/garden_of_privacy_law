@@ -150,7 +150,6 @@
   display: none;
 }
 
-
 .sidenote {
     --aside-offset: 1rem - 0.21rem; /* The 0.21rem is a tweak to make the baseline of the aside match the baseline of the adjacent paragraph */
     --aside-offset-lineheight: 1.5rem;

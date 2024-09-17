@@ -4,6 +4,9 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'
 import React from 'react'
+import dynamic from 'next/dynamic'
+
+const ToggleableMarkdown = dynamic(() => import('@/components/ToggleableMarkdown'), { ssr: false })
 
 interface Params {
   jurisdiction: string;
